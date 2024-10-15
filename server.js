@@ -1,21 +1,18 @@
 const express = require("express");
-const colors = require("colors");
-const cors = require("cors");
 const morgan = require("morgan");
 const dotenv = require("dotenv");
 const connectDb = require("./config/db");
 
-//dot en configuration
+
 dotenv.config();
 
 
 connectDb();
 
-//rest object
+
 const app = express();
 
-//middlewares
-// app.use(cors());
+
 app.use(express.json());
 app.use(morgan("dev"));
 
